@@ -14,6 +14,7 @@ export default function Model({ activeProject }) {
   const dimension = useDimension();
   const mouse = useMouse();
   const opacity = useMotionValue(0);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const textures = projects.map((project) => useTexture(project.src));
   const { width, height } = textures[0].image;
   const scale = useAspect(width, height / 1.2, 0.225);

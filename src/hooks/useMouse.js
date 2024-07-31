@@ -25,6 +25,7 @@ export default function useMouse() {
     return () => {
       window.removeEventListener("mousemove", mouseMove);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return mouse;
