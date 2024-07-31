@@ -16,7 +16,7 @@ export default function Model({ activeProject }) {
   const opacity = useMotionValue(0);
   const textures = projects.map((project) => useTexture(project.src));
   const { width, height } = textures[0].image;
-  const scale = useAspect(width, height, 0.225);
+  const scale = useAspect(width, height / 1.2, 0.225);
 
   const lerp = (x, y, a) => x * (1 - a) + y * a;
 
@@ -29,7 +29,7 @@ export default function Model({ activeProject }) {
     uDelta: { value: { x: 0, y: 0 } },
     uTexture: { value: textures[0] },
     uAlpha: { value: 0 },
-    uAmplitude: { value: 0.0009 },
+    uAmplitude: { value: 0.0006 },
   });
 
   React.useEffect(() => {
